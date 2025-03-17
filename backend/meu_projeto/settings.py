@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 from datetime import timedelta
+import os
+import dj_database_url
 
 
 REST_FRAMEWORK = {
@@ -102,14 +104,7 @@ WSGI_APPLICATION = 'meu_projeto.wsgi.application'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'meu_projeto',  # Nome do banco que você criou
-        'USER': 'postgres',      # Usuário padrão do PostgreSQL
-        'PASSWORD': 'melanciaAzul2@', # Substitua pela senha que você definiu
-        'HOST': 'localhost',
-        'PORT': '5432',
-    }
+    'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
 }
 
 
