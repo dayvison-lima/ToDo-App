@@ -1,7 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-    content: ["./src/**/*.{js,ts,jsx,tsx}"], // Garante que Tailwind funcione no App Router
-    theme: { extend: {} },
-    plugins: [],
-  };
-  
+  content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+};
