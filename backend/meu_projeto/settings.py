@@ -154,6 +154,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ALLOWED_ORIGINS = [
     "https://todo-app-1-4ae3.onrender.com",  # Permite que o Next.js acesse a API
+    "https://todo-app-akul.onrender.com"  # URL do backend
 ]
 
 CSRF_TRUSTED_ORIGINS = [
