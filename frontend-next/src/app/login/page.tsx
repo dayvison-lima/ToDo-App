@@ -21,7 +21,7 @@ export default function LoginPage() {
       localStorage.setItem("access_token", response.data.access);
       localStorage.setItem("refresh_token", response.data.refresh);
 
-      router.push("/tarefas"); // ✅ Redireciona para a página de tarefas
+      router.push("/tarefas");
     } catch (err) {
       setError("Usuário ou senha incorretos!");
     }
@@ -31,10 +31,9 @@ export default function LoginPage() {
     <div 
       className="min-h-screen flex items-center justify-center bg-gray-900 relative"
     >
-      {/* 🔹 Overlay para melhorar o contraste da tela */}
+
       <div className="absolute inset-0 bg-black bg-opacity-50"></div>
 
-      {/* 🔹 Caixa de login moderna */}
       <form
         onSubmit={handleLogin}
         className="relative z-10 p-8 bg-gray-800 bg-opacity-90 rounded-lg shadow-2xl w-96 text-white border border-gray-700"

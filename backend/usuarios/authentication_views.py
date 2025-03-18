@@ -16,7 +16,6 @@ from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 User = get_user_model()
 
 
-# 🔹 LOGIN - Autenticação usando cookies para armazenar JWT
 class LoginView(TokenObtainPairView):
     def post(self, request, *args, **kwargs):
         response = super().post(request, *args, **kwargs)
@@ -46,7 +45,6 @@ class LoginView(TokenObtainPairView):
         return response
 
 
-# 🔹 LOGOUT - Apaga os cookies ao sair
 class LogoutView(APIView):
     permission_classes = [IsAuthenticated]
 
@@ -57,7 +55,6 @@ class LogoutView(APIView):
         return response
 
 
-# 🔹 RECUPERAÇÃO DE SENHA - Envia e-mail para redefinir a senha
 class PasswordResetRequestView(APIView):
     def post(self, request):
         email = request.data.get("email")

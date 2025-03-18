@@ -23,17 +23,17 @@ REST_FRAMEWORK = {
 }
 
 SIMPLE_JWT = {
-    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=15),  # 🔹 Token de acesso expira em 15 minutos
-    "REFRESH_TOKEN_LIFETIME": timedelta(days=7),  # 🔹 Refresh Token dura 7 dias
-    "ROTATE_REFRESH_TOKENS": True,  # 🔹 Gera um novo refresh token a cada atualização
-    "BLACKLIST_AFTER_ROTATION": True,  # 🔹 Impede reutilização de tokens antigos
-    "AUTH_HEADER_TYPES": ("Bearer",),  # 🔹 Usa o formato Bearer Token
-    "AUTH_COOKIE": "access_token",  # 🔹 Nome do cookie para armazenar o token
-    "AUTH_COOKIE_REFRESH": "refresh_token",  # 🔹 Nome do cookie de refresh
-    "AUTH_COOKIE_SECURE": False,  # 🔹 True em produção (HTTPS obrigatório)
-    "AUTH_COOKIE_HTTP_ONLY": True,  # 🔹 Protege contra ataques XSS
+    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=15),
+    "REFRESH_TOKEN_LIFETIME": timedelta(days=7),
+    "ROTATE_REFRESH_TOKENS": True,
+    "BLACKLIST_AFTER_ROTATION": True,
+    "AUTH_HEADER_TYPES": ("Bearer",),
+    "AUTH_COOKIE": "access_token",
+    "AUTH_COOKIE_REFRESH": "refresh_token",
+    "AUTH_COOKIE_SECURE": False,
+    "AUTH_COOKIE_HTTP_ONLY": True,
     "AUTH_COOKIE_PATH": "/",
-    "AUTH_COOKIE_SAMESITE": "Lax",  # 🔹 Evita vazamento de cookies entre sites
+    "AUTH_COOKIE_SAMESITE": "Lax",
 }
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -152,15 +152,13 @@ STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# CORS_ALLOWED_ORIGINS = [
-#     "https://todo-app-1-4ae3.onrender.com",  # Permite que o Next.js acesse a API
-#     "https://todo-app-akul.onrender.com"  # URL do backend
-# ]
-
-CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOWED_ORIGINS = [
+    "https://todo-app-1-4ae3.onrender.com",
+    "https://todo-app-akul.onrender.com"
+]
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://todo-app-1-4ae3.onrender.com",  # ✅ Permite requisições seguras
+    "https://todo-app-1-4ae3.onrender.com",
 ]
 
 CORS_ALLOW_CREDENTIALS = True
@@ -177,4 +175,4 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = "todoappdayvison@gmail.com"
 EMAIL_HOST_PASSWORD = "dquj fjay fgcw mxkt"
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
-PASSWORD_RESET_TIMEOUT = 86400  # 1 dia (em segundos)
+PASSWORD_RESET_TIMEOUT = 86400

@@ -4,7 +4,7 @@ from .models import Tarefa
 
 
 class UsuarioSerializer(serializers.ModelSerializer):
-    password = serializers.CharField(write_only=True, required=False)  # Agora a senha NÃO é obrigatória
+    password = serializers.CharField(write_only=True, required=False)
 
     class Meta:
         model = Usuario
@@ -19,7 +19,7 @@ class UsuarioSerializer(serializers.ModelSerializer):
             data_nascimento=validated_data.get('data_nascimento', None)
         )
         if 'password' in validated_data:
-            user.set_password(validated_data['password'])  # Criptografa a senha antes de salvar
+            user.set_password(validated_data['password'])
         user.save()
         return user
 
@@ -31,7 +31,7 @@ class UsuarioSerializer(serializers.ModelSerializer):
         instance.data_nascimento = validated_data.get('data_nascimento', instance.data_nascimento)
 
         if 'password' in validated_data and validated_data['password']:  
-            instance.set_password(validated_data['password'])  # Atualiza senha apenas se for informada
+            instance.set_password(validated_data['password'])
 
         instance.save()
         return instance

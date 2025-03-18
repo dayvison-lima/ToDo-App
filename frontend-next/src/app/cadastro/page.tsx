@@ -2,7 +2,6 @@
 "use client";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-// import axios from "axios";
 import api from "../utils/api";
 
 export default function CadastroPage() {
@@ -21,7 +20,7 @@ export default function CadastroPage() {
         password,
       });
 
-      router.push("/login"); // 🔹 Redireciona para login após cadastro bem-sucedido
+      router.push("/login");
     } catch (err) {
       setError("Erro ao cadastrar usuário.");
     }
@@ -31,10 +30,8 @@ export default function CadastroPage() {
     <div 
       className="min-h-screen flex items-center justify-center bg-gray-900 relative"
     >
-      {/* 🔹 Overlay para melhorar o contraste */}
       <div className="absolute inset-0 bg-black bg-opacity-50"></div>
 
-      {/* 🔹 Caixa de Cadastro */}
       <form
         onSubmit={handleCadastro}
         className="relative z-10 p-8 bg-gray-800 bg-opacity-90 rounded-lg shadow-2xl w-96 text-white border border-gray-700"

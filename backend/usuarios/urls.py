@@ -9,9 +9,9 @@ router.register(r'usuarios', UsuarioViewSet)
 router.register(r'tarefas', TarefaViewSet)
 
 urlpatterns = [
-    path('', include(router.urls)),  # Mantemos os endpoints de usuários
-    path('token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),  # Endpoint para login
-    path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),  # Atualizar token JWT
+    path('', include(router.urls)),
+    path('token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path("logout/", LogoutView.as_view(), name="logout"),
     path("password-reset/", PasswordResetRequestView.as_view(), name="password_reset_request"),
     path("password-reset-confirm/<uidb64>/<token>/", PasswordResetConfirmView.as_view(), name="password_reset_confirm"),

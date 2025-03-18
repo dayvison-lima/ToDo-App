@@ -2,14 +2,13 @@ import axios from "axios";
 
 const URL_BACKEND = process.env.NEXT_PUBLIC_BACKEND_URL || "http://127.0.0.1:8000/api";
 
-console.log("Backend URL usada pela API:", URL_BACKEND);
 
 const api = axios.create({
   baseURL: URL_BACKEND,
-  withCredentials: true, // 🚀 Permite cookies HTTP-only
+  withCredentials: true,
 });
 
-// 🔹 Interceptador para enviar token automaticamente
+
 api.interceptors.request.use(
   async (config) => {
     const accessToken = localStorage.getItem("access_token");
@@ -21,7 +20,7 @@ api.interceptors.request.use(
   (error) => Promise.reject(error)
 );
 
-// 🔹 Interceptador para renovar o token se necessário
+
 api.interceptors.response.use(
   (response) => response,
   async (error) => {
@@ -37,12 +36,12 @@ api.interceptors.response.use(
         localStorage.setItem("access_token", response.data.access);
         error.config.headers.Authorization = `Bearer ${response.data.access}`;
 
-        return api(error.config); // 🔄 Refaz a requisição original
+        return api(error.config);
       } catch (refreshError) {
         console.error("Erro ao renovar token:", refreshError);
         localStorage.removeItem("access_token");
         localStorage.removeItem("refresh_token");
-        window.location.href = "/login"; // 🔹 Redireciona para login
+        window.location.href = "/login";
         return Promise.reject(refreshError);
       }
     }

@@ -115,7 +115,7 @@ export default function UsuariosPage() {
 
       {error && <p className="text-red-500">{error}</p>}
 
-      {/* Formulário para Criar Usuário */}
+
       {!editingUser && (
         <form onSubmit={handleCreate} className="p-4 border rounded mb-4 bg-gray-100">
           <h2 className="text-xl font-bold mb-2 text-gray-900">Adicionar Usuário</h2>
@@ -149,7 +149,7 @@ export default function UsuariosPage() {
         </form>
       )}
 
-      {/* Formulário para Editar Usuário */}
+
       {editingUser && (
         <form onSubmit={handleUpdate} className="p-4 border rounded mb-4 bg-gray-100">
           <h2 className="text-xl font-bold mb-2 text-gray-900">Editar Usuário</h2>

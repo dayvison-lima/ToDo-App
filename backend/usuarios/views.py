@@ -15,12 +15,12 @@ class UsuarioViewSet(viewsets.ModelViewSet):
 
     def get_permissions(self):
         if self.action == "create":
-            return [AllowAny()]  # 🔹 Permite criar usuários sem login
+            return [AllowAny()]
         return [permissions.IsAuthenticated()]
 
 
 class TarefaViewSet(viewsets.ModelViewSet):
-    queryset = Tarefa.objects.all()  # Adicionado para evitar erro no DRF Router
+    queryset = Tarefa.objects.all()
     serializer_class = TarefaSerializer
     permission_classes = [permissions.IsAuthenticated]
 
