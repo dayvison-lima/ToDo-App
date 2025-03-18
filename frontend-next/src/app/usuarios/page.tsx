@@ -3,7 +3,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import axios from "axios";
+import api from "../utils/api";
 import { useRouter } from "next/navigation";
 
 type Usuario = {
@@ -26,7 +26,7 @@ export default function UsuariosPage() {
         const token = localStorage.getItem("access_token");
         if (!token) throw new Error("Não autenticado");
 
-        const response = await axios.get("http://127.0.0.1:8000/api/usuarios/", {
+        const response = await api.get("/usuarios/", {
           headers: { Authorization: `Bearer ${token}` },
         });
 
@@ -54,8 +54,8 @@ export default function UsuariosPage() {
     e.preventDefault();
     try {
       const token = localStorage.getItem("access_token");
-      await axios.put(
-        `http://127.0.0.1:8000/api/usuarios/${editingUser.id}/`,
+      await api.put(
+        `/usuarios/${editingUser.id}/`,
         editData,
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -74,7 +74,7 @@ export default function UsuariosPage() {
   const handleDelete = async (id: number) => {
     try {
       const token = localStorage.getItem("access_token");
-      await axios.delete(`http://127.0.0.1:8000/api/usuarios/${id}/`, {
+      await api.delete(`/usuarios/${id}/`, {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -88,8 +88,8 @@ export default function UsuariosPage() {
     e.preventDefault();
     try {
       const token = localStorage.getItem("access_token");
-      const response = await axios.post(
-        "http://127.0.0.1:8000/api/usuarios/",
+      const response = await api.post(
+        "/usuarios/",
         newUser,
         { headers: { Authorization: `Bearer ${token}` } }
       );

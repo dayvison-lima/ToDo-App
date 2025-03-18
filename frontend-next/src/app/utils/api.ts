@@ -1,11 +1,11 @@
 import axios from "axios";
 
-// const URL_BACKEND = process.env.NEXT_PUBLIC_BACKEND_URL || "http://127.0.0.1:8000/api";
+const URL_BACKEND = process.env.NEXT_PUBLIC_BACKEND_URL || "http://127.0.0.1:8000/api";
 
-// console.log("Backend URL usada pela API:", URL_BACKEND);
+console.log("Backend URL usada pela API:", URL_BACKEND);
 
 const api = axios.create({
-  baseURL: "https://todo-app-akul.onrender.com/api",
+  baseURL: URL_BACKEND,
   withCredentials: true, // 🚀 Permite cookies HTTP-only
 });
 

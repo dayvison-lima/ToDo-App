@@ -30,11 +30,6 @@ export default function LoginPage() {
   return (
     <div 
       className="min-h-screen flex items-center justify-center bg-gray-900 relative"
-      style={{
-        backgroundImage: "url('/bg-login.jpg')", // 🔹 Troque por um caminho real ou URL válida
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
     >
       {/* 🔹 Overlay para melhorar o contraste da tela */}
       <div className="absolute inset-0 bg-black bg-opacity-50"></div>

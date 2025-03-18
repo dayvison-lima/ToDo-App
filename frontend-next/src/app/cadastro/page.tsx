@@ -15,7 +15,7 @@ export default function CadastroPage() {
   const handleCadastro = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      await api.post("http://127.0.0.1:8000/api/usuarios/", {
+      await api.post("/usuarios/", {
         username,
         email,
         password,
@@ -30,11 +30,6 @@ export default function CadastroPage() {
   return (
     <div 
       className="min-h-screen flex items-center justify-center bg-gray-900 relative"
-      style={{
-        backgroundImage: "url('/bg-cadastro.jpg')", // 🔹 Substitua pela sua imagem
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
     >
       {/* 🔹 Overlay para melhorar o contraste */}
       <div className="absolute inset-0 bg-black bg-opacity-50"></div>
