@@ -3,7 +3,7 @@ import axios from "axios";
 const URL_BACKEND = "https://todo-app-akul.onrender.com/api";
 
 const api = axios.create({
-  baseURL: URL_BACKEND || "http://127.0.0.1:8000/api",
+  baseURL: URL_BACKEND,
   withCredentials: true, // 🚀 Permite cookies HTTP-only
 });
 
