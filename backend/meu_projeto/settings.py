@@ -152,10 +152,12 @@ STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-CORS_ALLOWED_ORIGINS = [
-    "https://todo-app-1-4ae3.onrender.com",  # Permite que o Next.js acesse a API
-    "https://todo-app-akul.onrender.com"  # URL do backend
-]
+# CORS_ALLOWED_ORIGINS = [
+#     "https://todo-app-1-4ae3.onrender.com",  # Permite que o Next.js acesse a API
+#     "https://todo-app-akul.onrender.com"  # URL do backend
+# ]
+
+CORS_ALLOW_ALL_ORIGINS = True
 
 CSRF_TRUSTED_ORIGINS = [
     "https://todo-app-1-4ae3.onrender.com",  # ✅ Permite requisições seguras
