@@ -1,6 +1,8 @@
 import axios from "axios";
 
-const URL_BACKEND = "https://todo-app-akul.onrender.com/api";
+const URL_BACKEND = process.env.NEXT_PUBLIC_BACKEND_URL || "http://127.0.0.1:8000/api";
+
+console.log("Backend URL usada pela API:", URL_BACKEND);
 
 const api = axios.create({
   baseURL: URL_BACKEND,
