@@ -161,7 +161,7 @@ O frontend estara disponivel em: [**http://localhost:3000**](http://localhost:30
 ## 🌍 Deploy
 
 - 🟢 Backend hospedado no **Render**
-- 🕒 Frontend hospedado no **Vercel**
+- 🕒 Frontend hospedado no **Render**
 - 🗄️ Banco de dados: **PostgreSQL**
 
 ---
