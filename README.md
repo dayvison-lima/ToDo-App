@@ -42,7 +42,7 @@ Aplicacao **Fullstack** de gerenciamento de tarefas, com autenticacao segura via
 ### ⚙️ 1. Clonar o repositório
 
 ```bash
-git clone [https://github.com/seu-usuario/ToDo-App.git](https://github.com/dayvison-lima/ToDo-App)
+git clone https://github.com/seu-usuario/ToDo-App.git
 cd ToDo-App
 ```
 
